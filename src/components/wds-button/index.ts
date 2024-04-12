@@ -1,0 +1,1 @@
+export { default as WdsButton } from './wds-button';
