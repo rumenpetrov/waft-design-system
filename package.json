@@ -1,0 +1,41 @@
+{
+  "name": "waft-design-system",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0",
+  "type": "module",
+  "module": "dist/waft.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_a98f8697bafc6ea"
+  },
+  "peerDependencies": {
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.3.2",
+    "@storybook/addon-essentials": "^8.0.8",
+    "@storybook/addon-links": "^8.0.8",
+    "@storybook/blocks": "^8.0.8",
+    "@storybook/test": "^8.0.8",
+    "@storybook/web-components": "^8.0.8",
+    "@storybook/web-components-vite": "^8.0.8",
+    "storybook": "^8.0.8",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "chromatic": "^11.3.0",
+    "vite-plugin-dts": "^3.8.1"
+  }
+}

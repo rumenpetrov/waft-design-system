@@ -1,0 +1,66 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Contribution/Component" />
+
+# Component contribution process
+The contents of the Design System must be of a high quality and meet user needs. To guarantee this, all components need to meet certain criteria.
+
+### 1. Contribution criteria
+To be successful, proposals need to show that the component being suggested would be useful and unique.
+
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Useful</strong></td>
+      <td>
+        <p>There is evidence that this component would be useful for many users.</p>
+        <p>Evidence could be screenshots or links to versions of it being used in different services.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Unique</strong></td>
+      <td>
+        <p>It does not replicate something already in the Design System.</p>
+        <p>If it’s intended to replace an existing component, there is evidence to show that it’s better than the existing version.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Contribution criteria checklist
+Start by opening an issue which should include information about the following points.
+
+* [ ] Component description
+* [ ] Potential use case examples
+* [ ] Visual appearance
+    * Set of requirements in text form
+    * (optional) Design
+* [ ] List of supported states - e.g. hover, focus, error, disabled, read-only...
+* [ ] Expected interface/properties/variants/types/forms
+* [ ] (optional) Responsiveness and adaptability - e.g. Expected breakpoints, resize behavior...
+* [ ] (optional) Other useful resources
+
+### 2. Criteria confirmation
+Team members could ask questions, provide feedback and suggest options.
+Summary of the final requirements is formed.
+Admin review the proposal to check that it meet the criteria and it is clear what is suppose to be built. Then he confirms proceeding to the next step.
+Confirmed proposals are eligible for starting the development process.
+
+### 3. Development
+New branch is created from "main" and pull request is opened when the code is ready for review.
+
+#### Development checklist
+* [ ] The component itself and any other related logic
+* [ ] Provide stories which describe the component in details - e.g. states, interface, variants, exposed customizable properties, examples...
+* [ ] Documentation page updates, if applicable
+
+### 4. Component confirmation
+Admin review the code and request more changes or approve the component.
+Approved components goes to the "Labs" section for some time until admins make sure everything is working as expected.
+Admins decide when to move them to the "Components" section.

@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/blocks';
+import tokens from '../assets/design-tokens';
+
+<Meta title="Web/CSS variables" />
+
+# CSS variables
+For web, all **design tokens** are converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties). Their names are transformed to lowercase and 2 dashes are added at the beginning in order to comply with the web standards.
+
+<table style={{ width: '100%' }}>
+  <thead align="left">
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.keys(tokens)
+      .filter((tokenKey) => tokenKey.startsWith('WDS--'))
+      .map((tokenKey) => (
+        <tr>
+          <td>--{tokenKey.toLowerCase()}</td>
+          <td>{tokens[tokenKey]}</td>
+        </tr>
+      ))}
+  </tbody>
+</table>

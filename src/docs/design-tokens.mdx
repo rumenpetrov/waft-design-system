@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/blocks';
+import tokens from '../assets/design-tokens';
+
+<Meta title="Foundations/Design tokens" />
+
+# Design tokens
+
+Set of codified design decisions based on our users' needs.
+All tokens are represented by key value pairs (`[token-name]: [token-value]`) which follow this naming convention:
+* Keys are using capital letters only
+* Keys are prefixed with "WDS" (Waft design system) in order to avoid potential conflicts
+* Keys are using dash instead of space
+* Keys are using 2 dashes to distinguish between logic groups (e.g. Typography, Space, ...)
+* Values could be of string or number type
+
+#### Global tokens
+
+<table style={{ width: '100%' }}>
+  <thead align="left">
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.keys(tokens).filter((tokenKey) => tokenKey.startsWith('WDS--')).map((tokenKey) => (
+      <tr>
+        <td>{tokenKey}</td>
+        <td>{tokens[tokenKey]}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+#### Component tokens
+
+Every component exposes his own tokens which could inherit a global token as value or not.
+
+<table style={{ width: '100%' }}>
+  <thead align="left">
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.keys(tokens).filter((tokenKey) => !tokenKey.startsWith('WDS--')).map((tokenKey) => (
+      <tr>
+        <td>{tokenKey}</td>
+        <td>{tokens[tokenKey]}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

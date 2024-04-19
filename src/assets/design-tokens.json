@@ -1,0 +1,22 @@
+{
+  "WDS--TEXT--H1-FONT-SIZE": "48px",
+  "WDS--TEXT--H1-LINE-HEIGHT": "1",
+  "WDS--TEXT--H2-FONT-SIZE": "34px",
+  "WDS--TEXT--H2-LINE-HEIGHT": "1",
+  "WDS--TEXT--H3-FONT-SIZE": "24px",
+  "WDS--TEXT--H3-LINE-HEIGHT": "1.2",
+  "WDS--TEXT--H4-FONT-SIZE": "20px",
+  "WDS--TEXT--H4-LINE-HEIGHT": "1.2",
+  "WDS--TEXT--CONTENT-FONT-SIZE": "16px",
+  "WDS--TEXT--CONTENT-LINE-HEIGHT": "1.35",
+  "WDS--COLOR--BACKGROUND": "#fff",
+  "WDS--COLOR--FOREGROUND": "#000",
+  "WDS--COLOR--ACCENT": "coral",
+  "WDS--COLOR--SUCCESS": "green",
+  "WDS--COLOR--ERROR": "red",
+  "WDS--COLOR--WARNING": "yellow",
+  "WDS--COLOR--INFO": "blue",
+  "WDS--SPACE--BASE": "4px",
+  "WDS-BUTTON--PADDING-X": "4px",
+  "WDS-BUTTON--PADDING-Y": "8px"
+}
