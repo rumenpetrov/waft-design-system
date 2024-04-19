@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/blocks';
-import tokens from '../assets/design-tokens';
+import { renderTokens, isGlobalToken, isComponentToken } from '../design-tokens';
 
 <Meta title="Foundations/Design tokens" />
 
@@ -23,12 +23,12 @@ All tokens are represented by key value pairs (`[token-name]: [token-value]`) wh
     </tr>
   </thead>
   <tbody>
-    {Object.keys(tokens).filter((tokenKey) => tokenKey.startsWith('WDS--')).map((tokenKey) => (
-      <tr>
-        <td>{tokenKey}</td>
-        <td>{tokens[tokenKey]}</td>
+    {renderTokens((tokenName, tokenValue) => (
+      <tr key={tokenName}>
+        <td>{tokenName}</td>
+        <td>{tokenValue}</td>
       </tr>
-    ))}
+    ), isGlobalToken)}
   </tbody>
 </table>
 
@@ -41,14 +41,16 @@ Every component exposes his own tokens which could inherit a global token as val
     <tr>
       <th>Name</th>
       <th>Value</th>
+      <th>Mapped to</th>
     </tr>
   </thead>
   <tbody>
-    {Object.keys(tokens).filter((tokenKey) => !tokenKey.startsWith('WDS--')).map((tokenKey) => (
-      <tr>
-        <td>{tokenKey}</td>
-        <td>{tokens[tokenKey]}</td>
+    {renderTokens((tokenName, tokenValue, mappedTokenName) => (
+      <tr key={tokenName}>
+        <td>{tokenName}</td>
+        <td>{tokenValue}</td>
+        <td>{mappedTokenName || '-'}</td>
       </tr>
-    ))}
+    ), isComponentToken)}
   </tbody>
 </table>

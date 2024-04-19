@@ -6,11 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/components/my-element/my-element.ts"></script>
+    <script type="module" src="/src/components/button/button.ts"></script>
+
+    <style>
+      .special-button::part(root) {
+        background-color: aquamarine;
+        color: #000;
+      }
+    </style>
   </head>
   <body>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+    <div>
+      <wds-button>Button default</wds-button>
+      <wds-button disabled>Button default disabled</wds-button>
+      <wds-button danger>Button danger</wds-button>
+      <wds-button full-width>Button default full-width</wds-button>
+      <wds-button disabled full-width>Button default disabled full-width</wds-button>
+
+      <hr>
+
+      <wds-button appearance="accent">Button accent</wds-button>
+      <wds-button appearance="accent" disabled>Button accent disabled</wds-button>
+      <wds-button appearance="accent" full-width>Button accent full-width</wds-button>
+      <wds-button appearance="accent" disabled full-width>Button accent disabled full-width</wds-button>
+    </div>
+
+    <hr>
+
+    <form>
+      <input type="text" name="demo" />
+
+      <button>Native button</button>
+
+      <wds-button type="button" class="special-button" id="js-special-button">Form Button special</wds-button>
+      <wds-button type="reset">Form Reset</wds-button>
+      <wds-button appearance="accent" type="submit">Form Submit</wds-button>
+    </form>
+
+    <wds-button class="button button-primary" data-modal-trigger="1">Open modal</wds-button>
+
+    <dialog
+      class="modal" data-modal="1"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="confirmation-dialog-title"
+      aria-describedby="confirmation-dialog-description"
+    >
+      <h6 id="confirmation-dialog-title" class="modal-title">Modal title</h6>
+
+      <div class="modal-content" id="confirmation-dialog-description">
+        <p>Modal body text goes here.</p>
+      </div>
+
+      <footer class="modal-footer">
+        <wds-button class="button button-secondary" data-modal-close="1">Close</wds-button>
+        <wds-button class="button button-primary" data-modal-close="1">Save changes</wds-button>
+      </footer>
+    </dialog>
+
+    <script>
+      const dialogRootElementList = document.querySelectorAll('[data-modal]');
+      const dialogTriggerElementList = document.querySelectorAll('[data-modal-trigger]');
+      const dialogCloseElementList = document.querySelectorAll('[data-modal-close]');
+
+      if (dialogRootElementList?.length) {
+        dialogTriggerElementList.forEach((dialogTriggerElementListItem) => {
+          dialogTriggerElementListItem.addEventListener('click', () => {
+            const selectedDialogRootElement = [...dialogRootElementList]
+              .find(dialogRootElementListItem =>
+                  dialogRootElementListItem.dataset?.modal === dialogTriggerElementListItem.dataset?.modalTrigger);
+
+            if (selectedDialogRootElement) {
+              selectedDialogRootElement.showModal();
+            }
+          });
+        });
+
+        dialogCloseElementList.forEach((dialogCloseElementListItem) => {
+          dialogCloseElementListItem.addEventListener('click', () => {
+            const selectedDialogRootElement = [...dialogRootElementList]
+              .find(dialogRootElementListItem =>
+                  dialogRootElementListItem.dataset?.modal === dialogCloseElementListItem.dataset?.modalClose);
+
+            if (selectedDialogRootElement) {
+              selectedDialogRootElement.close();
+            }
+          });
+        });
+      }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          const specialButtonElement = document.querySelector('#js-special-button');
+
+          specialButtonElement.addEventListener('click', (event) => {
+            console.log('special button click', event);
+          })
+        });
+    </script>
   </body>
 </html>

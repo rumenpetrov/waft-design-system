@@ -3,11 +3,49 @@ import { Meta } from "@storybook/blocks";
 <Meta title="Guides/Styling components" />
 
 # Styling Web components
-While Waft isn't designed for extensive customization, but it does offer a degree of styling flexibility to accommodate user preferences.
-You could change the appearance of a component by overwriting the CSS custom properties it exposes.
+While Waft isn't designed for having extensive customization options, it does offer a degree of styling flexibility to accommodate user preferences.
+Our components are regular HTML elements which means they support any styling solution valid for [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components).\
+For example, you could use the following approaches to change the appearance of a component:
+
+#### Target them as regular HTML elements
+Add a class, id or the tag of the custom component itself.
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <style>
+      wds-button {
+        background-color: greenyellow;
+      }
+
+      .my-custom-button {
+        border: 1px solid lime;
+      }
+    </style>
+  </head>
+  <body>
+    <wds-button>Click me</wds-button>
+
+    <wds-button class="my-custom-button">Click me again</wds-button>
+  </body>
+</html>
+```
+
+#### Web tokens/CSS custom properties - [more](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+You could find these on the documentation page for each component.
 
 ```css
 .my-custom-button {
   --wds-button--padding-x: 16px;
+}
+```
+
+#### The `::part` CSS pseudo-element - [more](https://developer.mozilla.org/en-US/docs/Web/CSS/::part)
+You could find these on the documentation page for each component.
+
+```css
+wds-button::part(root) {
+  font-size: 20px;
 }
 ```

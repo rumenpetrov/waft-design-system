@@ -1,9 +1,9 @@
-import { Meta } from '@storybook/blocks';
-import tokens from '../assets/design-tokens';
+import { Meta, Source } from '@storybook/blocks';
+import { renderTokens, isGlobalToken, transformTokenNameToWebTokenName } from '../design-tokens';
 
 <Meta title="Web/CSS variables" />
 
-# CSS variables
+# Design tokens for web (CSS variables)
 For web, all **design tokens** are converted to [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties). Their names are transformed to lowercase and 2 dashes are added at the beginning in order to comply with the web standards.
 
 <table style={{ width: '100%' }}>
@@ -14,13 +14,11 @@ For web, all **design tokens** are converted to [CSS custom properties](https://
     </tr>
   </thead>
   <tbody>
-    {Object.keys(tokens)
-      .filter((tokenKey) => tokenKey.startsWith('WDS--'))
-      .map((tokenKey) => (
-        <tr>
-          <td>--{tokenKey.toLowerCase()}</td>
-          <td>{tokens[tokenKey]}</td>
-        </tr>
-      ))}
+    {renderTokens((tokenName, tokenValue) => (
+      <tr key={tokenName}>
+        <td>{transformTokenNameToWebTokenName(tokenName)}</td>
+        <td>{tokenValue}</td>
+      </tr>
+    ), isGlobalToken)}
   </tbody>
 </table>

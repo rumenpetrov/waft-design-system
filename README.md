@@ -28,6 +28,7 @@ Web is the main supported platform but the system allows easier extension with m
   * [ ] Develop at least one component from the MVP list by following a process
 
 * Phase Next
+  * [ ] Make automatic documentation for components to work
   * [ ] Define and describe versioning
   * [ ] More Design principles - Adaptive/Responsive/Accessibility
   * [ ] Setup Chromatic with CI
@@ -49,6 +50,8 @@ Web is the main supported platform but the system allows easier extension with m
 * https://carbondesignsystem.com/
 * https://nordhealth.design/
 * https://vaadin.com/design-system
+* https://github.com/ing-bank/lion
+* https://studio.backlight.dev/edit/5vtJtbY04aoD1dGKcsu1/introduction/?p=doc
 
 #### Technology stack
 * [Lit](https://lit.dev/)
