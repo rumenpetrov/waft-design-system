@@ -1,7 +1,12 @@
-import { Meta } from "@storybook/blocks";
+import { Meta, Source } from '@storybook/blocks';
+import { generateWebGlobalStyles } from '../design-tokens';
 
 <Meta title="Web/Get started" />
 
 # Get started
 
-TBA
+### 1. Add our global CSS to your application
+Preferably the code block should be placed in the `<head>...</head>` of every page. \
+This is going to set the default values for all the components.
+
+<Source language="html" code={generateWebGlobalStyles()} />

@@ -12,7 +12,7 @@ const preview: Preview = {
       // https://storybook.js.org/docs/writing-stories/naming-components-and-hierarchy#sorting-stories
       storySort: {
         method: 'alphabetical',
-        order: ['Welcome', 'Foundations', ['Design principles', 'Design tokens'], 'Web', ['Get started', 'CSS variables', '*'], '*', 'Guides', 'Contribution'],
+        order: ['Welcome', 'Foundations', ['Design principles', 'Design tokens'], 'Web', ['Get started', 'CSS variables', 'Components', ['Introduction', '*'], 'Labs', ['Introduction', '*'], '*'], '*', 'Guides', 'Contribution'],
       },
     },
   },
