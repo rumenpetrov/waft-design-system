@@ -16,16 +16,16 @@ Web is the main supported platform but the system allows easier extension with m
     * [x] Establish Design Principles
     * [x] Catalog Components
     * [x] Explain customization level and how styling could be done
-  * [ ] Define anatomy elements and collect resources
+  * [x] Define anatomy elements and collect resources
     * [x] Core values/Principles
-    * [ ] Define initial tokens
-    * [ ] Define initial systems, if needed
+    * [x] Define initial tokens
+    * [x] Define initial systems, if needed
     * [x] Define initial components
     * [x] Add some guides
   * [ ] Setup npm package and document how it should be used
   * [x] Auto deployment script
   * [x] Add docs for at least one process - component contribution
-  * [ ] Develop at least one component from the MVP list by following a process
+  * [x] Develop at least one component from the MVP list by following a process
 
 * Phase Next
   * [ ] Make automatic documentation for components to work
