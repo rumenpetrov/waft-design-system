@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.0.5
+
+### Patch Changes
+
+- 388ff05: Document how to use the library
+
 ## 0.0.4
 
 ### Patch Changes
