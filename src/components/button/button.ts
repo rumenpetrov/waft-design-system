@@ -1,7 +1,7 @@
 import { LitElement, unsafeCSS, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js';
-import { getWebTokenValue } from '../../design-tokens';
+import { getWebTokenValue } from '../../design-tokens/index.ts';
 
 type Type = 'button' | 'submit' | 'reset';
 type Appearance = 'accent' | 'default';

@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.0.4
+
+### Patch Changes
+
+- Build target bump to es2021 and make import more specific
+
 ## 0.0.3
 
 ### Patch Changes
