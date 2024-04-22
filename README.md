@@ -22,12 +22,14 @@ Web is the main supported platform but the system allows easier extension with m
     * [x] Define initial systems, if needed
     * [x] Define initial components
     * [x] Add some guides
-  * [ ] Setup npm package and document how it should be used
+  * [x] Setup npm package and document how it should be used
   * [x] Auto deployment script
   * [x] Add docs for at least one process - component contribution
   * [x] Develop at least one component from the MVP list by following a process
 
 * Phase Next
+  * [ ] Test with different frameworks and add examples/recipes
+  * [ ] Fix problems with build tools import and importmap
   * [ ] Make automatic documentation for components to work
   * [ ] Define and describe versioning
   * [ ] More Design principles - Adaptive/Responsive/Accessibility

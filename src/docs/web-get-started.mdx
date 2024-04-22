@@ -10,3 +10,43 @@ Preferably the code block should be placed in the `<head>...</head>` of every pa
 This is going to set the default values for all the components.
 
 <Source language="html" code={generateWebGlobalStyles()} />
+
+### 2. Import the library
+The preferred way of using Waft is via CDN.
+
+```html
+<script type="module" src="https://esm.sh/waft-design-system/dist/waft.js"></script>
+
+<!-- OR -->
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/waft-design-system/dist/waft.js"></script>
+```
+
+You could specify a version as well
+
+```html
+<script type="module" src="https://esm.sh/waft-design-system@0.0.4/dist/waft.js"></script>
+
+<!-- OR -->
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/waft-design-system@0.0.4/dist/waft.js"></script>
+```
+
+Inside a module
+```html
+<script type="module">
+  import 'https://esm.sh/waft-design-system/dist/waft.js';
+</script>
+
+<!-- OR -->
+
+<script type="module">
+  import 'https://cdn.jsdelivr.net/npm/waft-design-system/dist/waft.js';
+</script>
+```
+
+### 3. Use elements
+
+```html
+<wds-button type="button" appearance="accent">Hello Waft!</wds-button>
+```
