@@ -7,7 +7,46 @@
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
     <script type="module" src="/src/components/button/button.ts"></script>
+    <script type="module" src="/src/components/input-enhancer/input-enhancer.ts"></script>
 
+    <style>
+      :root {
+        --wds--text--h1-font-size: 48px;
+        --wds--text--h1-line-height: 1;
+        --wds--text--h2-font-size: 34px;
+        --wds--text--h2-line-height: 1;
+        --wds--text--h3-font-size: 24px;
+        --wds--text--h3-line-height: 1.2;
+        --wds--text--h4-font-size: 20px;
+        --wds--text--h4-line-height: 1.2;
+        --wds--text--content-font-size: 16px;
+        --wds--text--content-line-height: 1.35;
+        --wds--color--background: #fff;
+        --wds--color--foreground: #000;
+        --wds--color--accent: blueviolet;
+        --wds--color--accent-contrast: #fff;
+        --wds--color--success: forestgreen;
+        --wds--color--error: crimson;
+        --wds--color--error-contrast: #fff;
+        --wds--color--warning: gold;
+        --wds--color--info: dodgerblue;
+        --wds--color--mix-method: oklab;
+        --wds--space--100: 4px;
+        --wds--space--200: 6px;
+        --wds--space--300: 8px;
+        --wds--space--400: 12px;
+        --wds--space--500: 16px;
+        --wds--space--600: 24px;
+        --wds--space--700: 32px;
+        --wds--space--800: 48px;
+        --wds--space--900: 64px;
+        --wds--radii--base: 4px;
+        --wds--animation--transition-duration: 0.3s;
+        --wds--animation--transition-timing-function: ease-in-out;
+
+        accent-color: var(--wds--color--accent);
+      }
+    </style>
     <style>
       .special-button::part(root) {
         background-color: aquamarine;
@@ -16,6 +55,8 @@
     </style>
   </head>
   <body>
+    <h1>Playground</h1>
+
     <div>
       <wds-button>Button default</wds-button>
       <wds-button disabled>Button default disabled</wds-button>
@@ -33,14 +74,44 @@
 
     <hr>
 
-    <form>
-      <input type="text" name="demo" />
-
-      <button>Native button</button>
+    <form id="js-special-form">
+      <input type="text" name="readonly2" readonly value="readonly2" />
+      <wds-input-enhancer>
+        <input type="checkbox" name="check" value="check" />
+      </wds-input-enhancer>
+      <wds-input-enhancer>
+        <input type="range" name="range" value="range" />
+      </wds-input-enhancer>
+      <wds-input-enhancer>
+        <input type="text" name="demo" value="demo" />
+      </wds-input-enhancer>
+      <wds-input-enhancer full-width>
+        <input type="text" name="placeholder" placeholder="placeholder" />
+      </wds-input-enhancer>
+      <wds-input-enhancer>
+        <input type="text" name="disabled" placeholder="disabled" disabled />
+      </wds-input-enhancer>
+      <wds-input-enhancer>
+        <input type="text" name="readonly" readonly value="readonly" />
+      </wds-input-enhancer>
+      <wds-input-enhancer>
+        <input type="checkbox" name="check" value="check" />
+      </wds-input-enhancer>
+      <wds-input-enhancer full-width>
+        <input type="range" name="range" value="range" />
+      </wds-input-enhancer>
+      <wds-input-enhancer>
+        <input type="text" name="disabled" placeholder="disabled" disabled />
+      </wds-input-enhancer>
+      <wds-input-enhancer>
+        <input type="text" name="readonly" readonly value="readonly" />
+      </wds-input-enhancer>
 
       <wds-button type="button" class="special-button" id="js-special-button">Form Button special</wds-button>
       <wds-button type="reset">Form Reset</wds-button>
       <wds-button appearance="accent" type="submit">Form Submit</wds-button>
+
+      <button>Native button</button>
     </form>
 
     <wds-button class="button button-primary" data-modal-trigger="1">Open modal</wds-button>
@@ -97,11 +168,29 @@
     </script>
 
     <script>
+        function getFormValues(form) {
+          const formData = new FormData(form);
+
+          for (let pair of formData.entries()) {
+            console.log(pair[0] + ": " + pair[1]);
+          }
+
+          return Object.fromEntries(formData);
+        };
+
         document.addEventListener("DOMContentLoaded", (event) => {
           const specialButtonElement = document.querySelector('#js-special-button');
+          const specialFormElement = document.querySelector('#js-special-form');
 
           specialButtonElement.addEventListener('click', (event) => {
             console.log('special button click', event);
+          })
+
+          specialFormElement.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formValues = getFormValues(event.target);
+            console.log('special form submit > event', event);
+            console.log('special form submit > formValues', formValues);
           })
         });
     </script>

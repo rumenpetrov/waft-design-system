@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.1.0
+
+### Minor Changes
+
+- Input enhancer component
+
 ## 0.0.5
 
 ### Patch Changes

@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/blocks';
+import { parts } from './index.ts';
+import { componentTokensToWebTokens } from '../../design-tokens/index.ts';
+
+<Meta title="Web/Labs/InputEnhancer/Extra" />
+
+# InputEnhancer
+
+### Web tokens
+
+<table style={{ width: '100%' }}>
+  <thead align="left">
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Fallback value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {componentTokensToWebTokens((tokenName) => tokenName.startsWith('WDS-INPUT-ENHANCER--')).map(({ webTokenName, webTokenValue, mappedWebTokenName }) => (
+      <tr key={webTokenName}>
+        <td>{webTokenName}</td>
+        <td>{webTokenValue}</td>
+        <td>{mappedWebTokenName || '-'}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+### Parts
+
+<table style={{ width: '100%' }}>
+  <thead align="left">
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.keys(parts).map((partName) => (
+      <tr key={partName}>
+        <td>{parts[partName]}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
