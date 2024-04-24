@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.5",
+  "version": "0.1.0",
   "type": "module",
   "main": "dist/waft.js",
   "module": "dist/waft.js",
@@ -33,13 +33,13 @@
     "@storybook/test": "^8.0.8",
     "@storybook/web-components": "^8.0.8",
     "@storybook/web-components-vite": "^8.0.8",
+    "chromatic": "^11.3.0",
     "storybook": "^8.0.8",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1"
   },
   "dependencies": {
-    "@lion/ui": "^0.6.1",
-    "chromatic": "^11.3.0",
-    "vite-plugin-dts": "^3.8.1"
+    "@open-wc/form-control": "^1.0.0"
   }
 }
