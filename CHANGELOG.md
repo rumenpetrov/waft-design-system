@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.2.1
+
+### Patch Changes
+
+- Fix Typography export
+
 ## 0.2.0
 
 ### Minor Changes
