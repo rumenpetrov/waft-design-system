@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.1.1
+
+### Patch Changes
+
+- Change input enhancer name and add support for more form controls
+
 ## 0.1.0
 
 ### Minor Changes
