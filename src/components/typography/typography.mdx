@@ -2,9 +2,9 @@ import { Meta } from '@storybook/blocks';
 import { parts } from './index.ts';
 import { componentTokensToWebTokens } from '../../design-tokens/index.ts';
 
-<Meta title="Web/Labs/FormControlEnhancer/Extra" />
+<Meta title="Web/Labs/Typography/Extra" />
 
-# FormControlEnhancer
+# Typography
 
 ### Web tokens
 
@@ -17,7 +17,7 @@ import { componentTokensToWebTokens } from '../../design-tokens/index.ts';
     </tr>
   </thead>
   <tbody>
-    {componentTokensToWebTokens((tokenName) => tokenName.startsWith('WDS-FORM-CONTROL-ENHANCER--')).map(({ webTokenName, webTokenValue, mappedWebTokenName }) => (
+    {componentTokensToWebTokens((tokenName) => tokenName.startsWith('WDS-TYPOGRAPHY--')).map(({ webTokenName, webTokenValue, mappedWebTokenName }) => (
       <tr key={webTokenName}>
         <td>{webTokenName}</td>
         <td>{webTokenValue}</td>

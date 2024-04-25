@@ -13,7 +13,7 @@ export const defaultsProps = {
 export const parts = {};
 
 /**
- * The component provides styles for slotted native input elements
+ * The component provides styles for slotted native form control elements
  *
  * @slot - This element has a slot
  */
