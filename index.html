@@ -108,6 +108,28 @@
 
     <form id="js-special-form">
       <input type="text" name="readonly2" readonly value="readonly2" />
+      <fieldset>
+        <legend>
+          Yes or No?<span aria-label="required">*</span>
+        </legend>
+
+        <wds-form-control-enhancer>
+          <input type="radio" required name="driver" id="r1" value="yes" />
+        </wds-form-control-enhancer>
+        <label for="r1">Yes</label>
+
+        <wds-form-control-enhancer>
+          <input type="radio" required name="driver" id="r2" value="no" />
+        </wds-form-control-enhancer>
+        <label for="r2">No</label>
+      </fieldset>
+
+      <fieldset>
+        <wds-form-control-enhancer>
+          <input type="checkbox" required />
+        </wds-form-control-enhancer>
+      </fieldset>
+
       <wds-form-control-enhancer>
         <textarea name="textarea">textarea</textarea>
       </wds-form-control-enhancer>

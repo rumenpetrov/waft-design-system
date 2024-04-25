@@ -359,6 +359,18 @@ export const Error: Story = {
       content: '<input type="datetime-local" required />',
     })}
 
+    <p>Checkbox</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="checkbox" required />',
+    })}
+
+    <p>Radio</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="radio" name="err" required /><input type="radio" name="err" required />',
+    })}
+
     <p>Textarea</p>
     ${defaultRender({
       ...args,

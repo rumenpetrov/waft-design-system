@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.1.2
+
+### Patch Changes
+
+- Fix invalid state on checkbox and radio fields
+
 ## 0.1.1
 
 ### Patch Changes

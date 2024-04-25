@@ -71,8 +71,17 @@ export class WdsFormControlEnhancer extends LitElement implements WdsFormControl
       }
       ::slotted(input[type="radio"]),
       ::slotted(input[type="checkbox"]) {
+        appearance: none;
         width: 24px;
         height: 24px;
+        padding: 0;
+      }
+      ::slotted(input[type="radio"]) {
+        border-radius: 50%;
+      }
+      ::slotted(input[type="radio"]:checked),
+      ::slotted(input[type="checkbox"]:checked) {
+        box-shadow: inset 0 0 0 4px var(--_wds-form-control-enhancer--focus-color);
       }
       ::slotted(input[type="color"]) {
         padding: 4px;
