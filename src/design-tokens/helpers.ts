@@ -44,7 +44,7 @@ export const renderTokens = (mapCallback: Function, filterCallback = (tokenName:
 
 export const globalTokensToWebTokens = (): string => {
   return renderTokens(
-    (tokenName: TokenName, tokenValue: string) => `    ${transformTokenNameToWebTokenName(tokenName)}: ${tokenValue};\n`,
+    (tokenName: TokenName, tokenValue: string) => `${transformTokenNameToWebTokenName(tokenName)}: ${tokenValue};\n    `,
     isGlobalToken,
   ).join('')
 }
@@ -61,12 +61,16 @@ export const componentTokensToWebTokens = (filterCallback: Function) => {
 }
 
 export const generateWebGlobalStyles = () => {
-  const globalCSSOpen = `<style>\n  :root {\n`;
-  const globalCSSVariableList = globalTokensToWebTokens();
-  const globalCSSExtras = `
+  // The formatting have to be preserved
+  return `<style>
+  :root {
+    ${globalTokensToWebTokens()}
     accent-color: var(--wds--color--accent);
-  `;
-  const globalCSSClose = `}\n</style>`;
+  }
 
-  return `${globalCSSOpen}${globalCSSVariableList}${globalCSSExtras}${globalCSSClose}`;
+  ::selection {
+    background-color: var(--wds--color--accent);
+    color: var(--wds--color--accent-contrast);
+  }
+</style>`;
 };
