@@ -7,7 +7,7 @@
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
     <script type="module" src="/src/components/button/button.ts"></script>
-    <script type="module" src="/src/components/input-enhancer/input-enhancer.ts"></script>
+    <script type="module" src="/src/components/form-control-enhancer/form-control-enhancer.ts"></script>
 
     <style>
       :root {
@@ -46,6 +46,16 @@
 
         accent-color: var(--wds--color--accent);
       }
+
+      ::selection {
+        background-color: var(--wds--color--accent);
+        color: var(--wds--color--accent-contrast);
+      }
+      select option:checked,
+      select option:hover {
+        background-color: var(--wds--color--accent) !important;
+        color: var(--wds--color--accent-contrast) !important;
+      }
     </style>
     <style>
       .special-button::part(root) {
@@ -74,38 +84,63 @@
 
     <hr>
 
+    <wds-form-control-enhancer>
+      <select required>
+        <option value="">Select option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+      </select>
+    </wds-form-control-enhancer>
+
+    <wds-form-control-enhancer full-width>
+      <select>
+        <option value="">Pick</option>
+        <option value="1">1. asdas</option>
+        <option value="2">2. asdas</option>
+        <option value="3">3. asdas</option>
+        <option value="4">4. asdas</option>
+      </select>
+    </wds-form-control-enhancer>
+
+    <hr>
+
     <form id="js-special-form">
       <input type="text" name="readonly2" readonly value="readonly2" />
-      <wds-input-enhancer>
+      <wds-form-control-enhancer>
+        <textarea name="textarea">textarea</textarea>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="checkbox" name="check" value="check" />
-      </wds-input-enhancer>
-      <wds-input-enhancer>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="range" name="range" value="range" />
-      </wds-input-enhancer>
-      <wds-input-enhancer>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="text" name="demo" value="demo" />
-      </wds-input-enhancer>
-      <wds-input-enhancer full-width>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer full-width>
         <input type="text" name="placeholder" placeholder="placeholder" />
-      </wds-input-enhancer>
-      <wds-input-enhancer>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="text" name="disabled" placeholder="disabled" disabled />
-      </wds-input-enhancer>
-      <wds-input-enhancer>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="text" name="readonly" readonly value="readonly" />
-      </wds-input-enhancer>
-      <wds-input-enhancer>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="checkbox" name="check" value="check" />
-      </wds-input-enhancer>
-      <wds-input-enhancer full-width>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer full-width>
         <input type="range" name="range" value="range" />
-      </wds-input-enhancer>
-      <wds-input-enhancer>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="text" name="disabled" placeholder="disabled" disabled />
-      </wds-input-enhancer>
-      <wds-input-enhancer>
+      </wds-form-control-enhancer>
+      <wds-form-control-enhancer>
         <input type="text" name="readonly" readonly value="readonly" />
-      </wds-input-enhancer>
+      </wds-form-control-enhancer>
 
       <wds-button type="button" class="special-button" id="js-special-button">Form Button special</wds-button>
       <wds-button type="reset">Form Reset</wds-button>

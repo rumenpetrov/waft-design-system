@@ -1,25 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
 import './index.ts';
-import type { WdsInputEnhancerProps } from './index.ts';
+import type { WdsFormControlEnhancerProps } from './index.ts';
 import { defaultsProps } from './index.ts';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
-interface WdsInputEnhancerStory extends WdsInputEnhancerProps {
+interface WdsFormControlEnhancerStory extends WdsFormControlEnhancerProps {
   content?: any;
 }
 
-const defaultRender = (args: WdsInputEnhancerStory) =>
+const defaultRender = (args: WdsFormControlEnhancerStory) =>
   html`
-    <wds-input-enhancer ?full-width=${args.fullWidth}>
+    <wds-form-control-enhancer ?full-width=${args.fullWidth}>
       ${unsafeHTML(args.content)}
-    </wds-input-enhancer>
+    </wds-form-control-enhancer>
   `;
 
-const meta: Meta<WdsInputEnhancerStory> = {
-  title: 'Web/Labs/InputEnhancer',
+const meta: Meta<WdsFormControlEnhancerStory> = {
+  title: 'Web/Labs/FormControlEnhancer',
   tags: ['autodocs'],
-  component: 'wds-input-enhancer',
+  component: 'wds-form-control-enhancer',
   render: defaultRender,
   argTypes: {
     content: {
@@ -31,7 +31,7 @@ const meta: Meta<WdsInputEnhancerStory> = {
 };
 
 export default meta;
-type Story = StoryObj<WdsInputEnhancerStory>
+type Story = StoryObj<WdsFormControlEnhancerStory>
 
 export const Default: Story = {
   args: {
@@ -107,6 +107,26 @@ export const Types: Story = {
       ...args,
       content: '<input type="submit" value="Don\'t use me" />',
     })}
+
+    <p>Textarea</p>
+    ${defaultRender({
+      ...args,
+      content: '<textarea name="textarea">textarea</textarea>',
+    })}
+
+    <p>Select</p>
+    ${defaultRender({
+      ...args,
+      content: `
+        <select>
+          <option value="">Select option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="4">Option 4</option>
+        </select>
+      `,
+    })}
   `,
   args: {
     ...defaultsProps,
@@ -181,6 +201,26 @@ export const FullWidth: Story = {
       ...args,
       content: '<input type="submit" value="Don\'t use me" />',
     })}
+
+    <p>Textarea</p>
+    ${defaultRender({
+      ...args,
+      content: '<textarea name="textarea">textarea</textarea>',
+    })}
+
+    <p>Select</p>
+    ${defaultRender({
+      ...args,
+      content: `
+        <select>
+          <option value="">Select option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="4">Option 4</option>
+        </select>
+      `,
+    })}
   `,
   args: {
     ...defaultsProps,
@@ -254,6 +294,89 @@ export const Disabled: Story = {
     ${defaultRender({
       ...args,
       content: '<input type="submit" value="Don\'t use me" disabled />',
+    })}
+
+    <p>Textarea</p>
+    ${defaultRender({
+      ...args,
+      content: '<textarea name="textarea" disabled>textarea</textarea>',
+    })}
+
+    <p>Select</p>
+    ${defaultRender({
+      ...args,
+      content: `
+        <select disabled>
+          <option value="">Select option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="4">Option 4</option>
+        </select>
+      `,
+    })}
+  `,
+  args: {
+    ...defaultsProps,
+  },
+};
+
+export const Error: Story = {
+  render: (args) => html`
+    <p>Text</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="text" required />',
+    })}
+
+    <p>Number</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="number" required />',
+    })}
+
+    <p>File</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="file" required />',
+    })}
+
+    <p>Date</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="date" required />',
+    })}
+
+    <p>Time</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="time" required />',
+    })}
+
+    <p>DateTime local</p>
+    ${defaultRender({
+      ...args,
+      content: '<input type="datetime-local" required />',
+    })}
+
+    <p>Textarea</p>
+    ${defaultRender({
+      ...args,
+      content: '<textarea name="textarea" required></textarea>',
+    })}
+
+    <p>Select</p>
+    ${defaultRender({
+      ...args,
+      content: `
+        <select required>
+          <option value="">Select option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="4">Option 4</option>
+        </select>
+      `,
     })}
   `,
   args: {
