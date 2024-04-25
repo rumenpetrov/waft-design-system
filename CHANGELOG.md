@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.2.0
+
+### Minor Changes
+
+- Typography component
+
 ## 0.1.2
 
 ### Patch Changes
