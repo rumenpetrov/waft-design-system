@@ -79,7 +79,7 @@ export type Tokens = {
 
 const tokens = {
   "WDS--TEXT--H1-FONT-SIZE": "3.815rem",
-  "WDS--TEXT--H1-LINE-HEIGHT": "1",
+  "WDS--TEXT--H1-LINE-HEIGHT": "1.2",
   "WDS--TEXT--H2-FONT-SIZE": "3.052rem",
   "WDS--TEXT--H2-LINE-HEIGHT": "1.375",
   "WDS--TEXT--H3-FONT-SIZE": "2.441rem",

@@ -92,7 +92,7 @@ export class WdsTypography extends LitElement implements WdsTypographyProps {
       h4,
       h5,
       h6 {
-        margin: 1rem 0 0.5rem;
+        margin: 1em 0 0.5em;
       }
       h1 {
         font-size: var(--_wds-typography--h1--font-size);
@@ -119,7 +119,7 @@ export class WdsTypography extends LitElement implements WdsTypographyProps {
         line-height: var(--_wds-typography--h6--line-height);
       }
       p {
-        margin: 0.5rem 0;
+        margin: 0.5em 0;
         font-size: var(--_wds-typography--p--font-size);
         line-height: var(--_wds-typography--p--line-height);
       }

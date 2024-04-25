@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.2.2
+
+### Patch Changes
+
+- Change Typography spacing
+
 ## 0.2.1
 
 ### Patch Changes
