@@ -1,5 +1,11 @@
 # waft-design-system
 
+## 0.2.3
+
+### Patch Changes
+
+- Get started docs update
+
 ## 0.2.2
 
 ### Patch Changes
