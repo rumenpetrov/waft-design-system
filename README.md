@@ -54,6 +54,7 @@ Web is the main supported platform but the system allows easier extension with m
 * https://vaadin.com/design-system
 * https://github.com/ing-bank/lion
 * https://studio.backlight.dev/edit/5vtJtbY04aoD1dGKcsu1/introduction/?p=doc
+* https://github.com/ithaka/pharos/blob/develop/packages/pharos/src/components/button/pharos-button.wc.stories.jsx
 
 #### Technology stack
 * [Lit](https://lit.dev/)
